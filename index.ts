@@ -8,10 +8,18 @@ new P5((p5: P5) => {
   let cache: P5.Graphics;
   let txtSize: number;
   let cnv: P5.Graphics;
+  let photo: P5.Image;
 
   p5.preload = () => {
     font = p5.loadFont(
       'https://s3-us-west-2.amazonaws.com/s.cdpn.io/709927/PFDinTextCondPro-Bold.ttf'
+    );
+    photo = p5.loadImage(
+      '007.png',
+      () => {},
+      err => {
+        console.error(err);
+      }
     );
   };
 
